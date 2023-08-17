@@ -63,6 +63,30 @@
  *             schema:
  *               $ref: '#/components/schemas/Product'
  * /products/{id}:
+ *   get:
+ *     summary: Get a product by ID
+ *     tags:
+ *       - Product
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         description: ID of the product to retrieve
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Product found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Product'
+ *       404:
+ *         description: Product not found
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Product not found
  *   put:
  *     summary: Update a product by ID
  *     tags:
